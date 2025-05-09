@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Necst - Full Protection for Your Data</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+   <script>
+      tailwind.config = {
+         theme: {
+            extend: {
+               fontFamily: {
+                  sans: ['Inter', 'sans-serif'],
+               },
+               colors: {
+                  'custom-purple': '#36077d',
+                  'custom-blue': '#007bff',
+                  'dark-bg': '#0a0a1a',
+                  'menu-bg': 'rgba(10, 10, 26, 0.98)'
+               },
+               transitionDuration: {
+                  '400': '400ms',
+               },
+               transitionTimingFunction: {
+                  'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+               }
+            }
+         }
+      }
+   </script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+   <script src="https://unpkg.com/lucide@latest"></script>
+
+   <style>
+      body {
+         font-family: 'Inter', sans-serif;
+         color: white;
+         background-color: #0a0a1a;
+         background-image:
+            radial-gradient(ellipse 50% 60% at 5% 50%, rgba(54, 7, 125, 0.6) 0%, transparent 70%),
+            radial-gradient(ellipse 50% 60% at 95% 50%, rgba(0, 123, 255, 0.5) 0%, transparent 70%);
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+         min-height: 100vh;
+      }
+      .body-no-scroll {
+         overflow: hidden;
+      }
+
+      .service-icon {
+         width: 40px;
+         height: 40px;
+         margin-bottom: 0.75rem;
+         filter: invert(100%) brightness(2);
+      }
+      img[src*="onlinewebfonts"] { }
+
+      .service-card {
+         background-color: rgba(255, 255, 255, 0.05);
+         border: 1px solid rgba(255, 255, 255, 0.1);
+         transition: background-color 0.3s ease, transform 0.3s ease;
+         border-radius: 1rem;
+         padding: 1.5rem;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         text-align: center;
+      }
+      .service-card:hover {
+         background-color: rgba(255, 255, 255, 0.1);
+         transform: translateY(-5px);
+      }
+
+      a {
+         color: inherit;
+      }
+      header a.hover\:text-gray-300:hover,
+      footer a.hover\:text-gray-300:hover {
+         color: #D1D5DB;
+      }
+
+      #mobile-menu {
+         transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+         will-change: transform, opacity;
+      }
+      #mobile-menu.menu-hidden {
+         opacity: 0;
+         transform: translateY(-100%);
+         pointer-events: none;
+      }
+      #mobile-menu.menu-visible {
+         opacity: 1;
+         transform: translateY(0);
+         pointer-events: auto;
+      }
+
+      #menu-toggle i {
+         transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+         opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 24px;
+         height: 24px;
+      }
+
+      #menu-icon-open {
+         transform-origin: center;
+      }
+
+      #menu-icon-close {
+         transform-origin: center;
+      }
+      #logo {
+         transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+   </style>
+</head>
+<body class="font-sans overflow-x-hidden">
+
+<div class="container mx-auto px-4 min-h-screen flex flex-col">
+
+   <header class="py-6">
+      <nav class="flex justify-between items-center">
+         <div id="logo" class="text-2xl font-bold z-30">
+            <a href="index.html" class="nav-link">
+               <svg width="39" height="34" viewBox="0 0 39 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_251_382)">
+                     <path d="M7.29938 27.25V12.8661C7.29938 9.66085 9.89773 7.0625 13.103 7.0625V7.0625M19.3023 7.0625V7.0625C19.3023 3.71427 16.588 1 13.2398 1H10.7756C8.54717 1 6.40727 1.87243 4.81403 3.43051L4.24864 3.98343C2.2351 5.95254 1.1001 8.65003 1.1001 11.4664V26.9986C1.1001 30.3131 3.78703 33 7.10153 33V33C10.416 33 13.103 30.3131 13.103 26.9986V20.3017C13.103 17.1147 16.686 15.2425 19.3023 17.0625V17.0625C21.9185 18.8825 25.5015 17.0103 25.5015 13.8233V7.19928C25.5015 3.77551 28.277 1 31.7008 1V1C35.1246 1 37.9001 3.77551 37.9001 7.19928V22.9686C37.9001 25.7035 36.7834 28.3199 34.8086 30.212L34.5054 30.5024C32.8326 32.1052 30.6053 33 28.2885 33H25.0523C21.8766 33 19.3023 30.4256 19.3023 27.25V27.25M25.5015 27.25V27.25C29.0346 27.25 31.8987 24.3859 31.8987 20.8529V7.0625" stroke="white" stroke-width="2"/>
+                  </g>
+                  <defs>
+                     <clipPath id="clip0_251_382">
+                        <rect width="39" height="34" fill="white"/>
+                     </clipPath>
+                  </defs>
+               </svg>
+            </a>
+         </div>
+
+         <ul class="hidden md:flex space-x-6 items-center">
+            <li><a href="#" class="hover:text-gray-300 transition duration-300">Necst Academy</a></li>
+            <li><a href="#services" class="hover:text-gray-300 transition duration-300">Services</a></li>
+            <li><a href="#" class="hover:text-gray-300 transition duration-300">Pricing</a></li>
+            <li>
+               <a href="application.html" class="bg-indigo-800 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded-lg transition duration-300 shadow-md">
+                  Try Demo
+               </a>
+            </li>
+         </ul>
+
+         <div class="md:hidden z-30">
+            <button id="menu-toggle" aria-label="Toggle Menu" class="text-white relative w-6 h-6 flex items-center justify-center">
+               <i data-lucide="menu" id="menu-icon-open" class="absolute top-0 left-0 transform scale-100 opacity-100"></i>
+               <i data-lucide="x" id="menu-icon-close" class="absolute top-0 left-0 transform scale-0 opacity-0"></i>
+            </button>
+         </div>
+      </nav>
+   </header>
+
+   <div id="mobile-menu"
+        class="md:hidden fixed inset-0 w-screen h-screen bg-menu-bg z-20 menu-hidden flex flex-col items-start pt-24">
+      <ul class="flex flex-col items-start space-y-8 px-8 py-20 w-full">
+         <li><a href="#" class="text-2xl hover:text-indigo-400 transition duration-300">Necst Academy</a></li>
+         <li><a href="#services" class="text-2xl hover:text-indigo-400 transition duration-300">Services</a></li>
+         <li><a href="#" class="text-2xl hover:text-indigo-400 transition duration-300">Pricing</a></li>
+         <li>
+            <a href="application.html" class="bg-indigo-800 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-lg transition duration-300 shadow-md mt-6 inline-block text-lg self-start">
+               Try Demo
+            </a>
+         </li>
+      </ul>
+   </div>
+
+
+   <main class="flex-grow flex flex-col items-center justify-center text-center pt-10 pb-20">
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
+         Full Protection for Your Data
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl">
+         Comprehensive tools for digital security and data management.
+         NECST puts your data security first.
+      </p>
+      <div class="my-8">
+         <h2 class="text-4xl font-bold tracking-wider mb-2">NECST</h2>
+         <p class="text-xl text-gray-400">Your data. Your control.</p>
+      </div>
+      <a href="application.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-lg transform hover:scale-105">
+         Learn More
+      </a>
+   </main>
+
+   <section id="services" class="py-16 mb-10">
+      <div class="container mx-auto px-4">
+         <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="service-card">
+               <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/gauge.svg" alt="Password Strength Icon" class="service-icon" />
+               <h3 class="text-xl font-semibold mb-2">Password Strength Analyser</h3>
+               <p class="text-gray-400 text-sm">Evaluate how secure your password really is.</p>
+            </div>
+            <div class="service-card">
+               <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/key-round.svg" alt="Password Generator Icon" class="service-icon" />
+               <h3 class="text-xl font-semibold mb-2">Password Generator</h3>
+               <p class="text-gray-400 text-sm">Create unbreakable passwords with just one click.</p>
+            </div>
+            <div class="service-card">
+               <img src="https://pic.onlinewebfonts.com/thumbnails/icons_451245.svg" alt="2FA Icon" class="service-icon" />
+               <h3 class="text-xl font-semibold mb-2">Configuring 2FA</h3>
+               <p class="text-gray-400 text-sm">Add an extra layer of protection to your account.</p>
+            </div>
+            <div class="service-card">
+               <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/vault.svg" alt="Password Manager Icon" class="service-icon" />
+               <h3 class="text-xl font-semibold mb-2">Password Manager</h3>
+               <p class="text-gray-400 text-sm">Manage all your saved passwords in one secure place.</p>
+            </div>
+            <div class="service-card">
+               <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/database.svg" alt="Fake Data Icon" class="service-icon" />
+               <h3 class="text-xl font-semibold mb-2">Fake Data Maker</h3>
+               <p class="text-gray-400 text-sm">Generate placeholder data for testing or privacy needs.</p>
+            </div>
+            <div class="service-card">
+               <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/link.svg" alt="URL Check Icon" class="service-icon" />
+               <h3 class="text-xl font-semibold mb-2">Check My URL</h3>
+               <p class="text-gray-400 text-sm">Verify the safety and reputation of web links.</p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <footer class="text-center py-6 mt-auto text-gray-500 text-sm">
+      <p>&copy; 2025 NECST. All rights reserved.</p>
+      <div class="mt-2">
+         <a href="privacy.html" class="hover:text-gray-300 mx-2">Privacy Policy</a> |
+         <a href="#" class="hover:text-gray-300 mx-2">Terms of Service</a>
+      </div>
+   </footer>
+
+</div>
+
+<script>
+   document.addEventListener('DOMContentLoaded', function() {
+
+      lucide.createIcons();
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const iconOpen = document.getElementById('menu-icon-open');
+      const iconClose = document.getElementById('menu-icon-close');
+      const logo = document.getElementById('logo');
+      const body = document.body;
+
+      function toggleMenu() {
+         const isHidden = mobileMenu.classList.contains('menu-hidden');
+
+         if (isHidden) {
+            mobileMenu.classList.remove('menu-hidden');
+            mobileMenu.classList.add('menu-visible');
+            body.classList.add('body-no-scroll');
+
+            iconOpen.classList.remove('scale-100', 'opacity-100');
+            iconOpen.classList.add('scale-0', 'opacity-0');
+
+            iconClose.classList.remove('scale-0', 'opacity-0');
+            iconClose.classList.add('scale-100', 'opacity-100');
+
+            logo.classList.add('opacity-0');
+         } else {
+            iconOpen.classList.remove('scale-0', 'opacity-0');
+            iconOpen.classList.add('scale-100', 'opacity-100');
+
+            iconClose.classList.remove('scale-100', 'opacity-100');
+            iconClose.classList.add('scale-0', 'opacity-0');
+
+            logo.classList.remove('opacity-0');
+           
+            mobileMenu.classList.add('menu-hidden');
+            mobileMenu.classList.remove('menu-visible');
+            body.classList.remove('body-no-scroll');
+         }
+      }
+
+      if (menuToggle && mobileMenu && iconOpen && iconClose && logo) {
+         menuToggle.addEventListener('click', toggleMenu);
+      }
+
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+         link.addEventListener('click', () => {
+            if (mobileMenu.classList.contains('menu-visible')) {
+               toggleMenu();
+            }
+         });
+      });
+   });
+
+</script>
+
+</body>
+</html>
